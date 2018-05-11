@@ -112,7 +112,7 @@ UCI_tidy <- UCI %>%
 
 # Apply "Mean" to the column names of the tidy data set columns to indicate they are 
 # averaged data
-names(UCI_tidy) <- c("subject","activity",paste0("Mean-",(grep("mean$|std$",XColNames,value=TRUE))))
+names(UCI_tidy) <- c("subject","activity",paste0("Mean-",(grep("mean|std",XColNames,value=TRUE))))
 
 # Write the indepedentant tidy data summary
 write.table(UCI_tidy,"UCI_tidysummary.txt")
